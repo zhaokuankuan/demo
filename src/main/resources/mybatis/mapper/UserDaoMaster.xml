@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.master.UserDaoMaster">
+
+    <resultMap id="User" type="com.example.demo.domain.User" >
+        <result column="id" property="id" />
+        <result column="phone" property="phone" />
+        <result column="login_name" property="loginName" />
+        <result column="name" property="name" />
+        <result column="password" property="password" />
+        <result column="contcat_phone" property="contcatPhone" />
+        <result column="id_type" property="idType" />
+        <result column="id_number" property="idNumber" />
+        <result column="id_number_photo_back_url" property="idNumberPhotoBackUrl" />
+        <result column="id_number_photo_url" property="idNumberPhotoUrl" />
+        <result column="nickname" property="nickname" />
+        <result column="birthplace" property="birthplace" />
+        <result column="home" property="home" />
+        <result column="company" property="company" />
+        <result column="email" property="email" />
+        <result column="last_login_time" property="lastLoginTime" />
+        <result column="device_storehouse_id" property="deviceStorehouseId" />
+        <result column="install_site_id" property="installSiteId" />
+        <result column="iot_type_id" property="iotTypeId" />
+        <result column="operator_id" property="operatorId" />
+        <result column="resident_id" property="residentId" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="status" property="status" />
+        <result column="system_id" property="systemId" />
+        <result column="tenant_id" property="tenantId" />
+        <result column="extend1" property="extend1" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        `id`,
+        `phone`,
+        `login_name`,
+        `name`,
+        `password`,
+        `contcat_phone`,
+        `id_type`,
+        `id_number`,
+        `id_number_photo_back_url`,
+        `id_number_photo_url`,
+        `nickname`,
+        `birthplace`,
+        `home`,
+        `company`,
+        `email`,
+        `last_login_time`,
+        `device_storehouse_id`,
+        `install_site_id`,
+        `iot_type_id`,
+        `operator_id`,
+        `resident_id`,
+        `create_time`,
+        `update_time`,
+        `status`,
+        `system_id`,
+        `tenant_id`,
+        `extend1`
+    </sql>
+
+    <insert id="insert" parameterType="java.util.Map" >
+        INSERT INTO user (
+        `id`,
+        `phone`,
+        `login_name`,
+        `name`,
+        `password`,
+        `contcat_phone`,
+        `id_type`,
+        `id_number`,
+        `id_number_photo_back_url`,
+        `id_number_photo_url`,
+        `nickname`,
+        `birthplace`,
+        `home`,
+        `company`,
+        `email`,
+        `last_login_time`,
+        `device_storehouse_id`,
+        `install_site_id`,
+        `iot_type_id`,
+        `operator_id`,
+        `resident_id`,
+        `create_time`,
+        `update_time`,
+        `status`,
+        `system_id`,
+        `tenant_id`,
+        `extend1`
+        )
+        VALUES(
+        #{user.id},
+        #{user.phone},
+        #{user.loginName},
+        #{user.name},
+        #{user.password},
+        #{user.contcatPhone},
+        #{user.idType},
+        #{user.idNumber},
+        #{user.idNumberPhotoBackUrl},
+        #{user.idNumberPhotoUrl},
+        #{user.nickname},
+        #{user.birthplace},
+        #{user.home},
+        #{user.company},
+        #{user.email},
+        #{user.lastLoginTime},
+        #{user.deviceStorehouseId},
+        #{user.installSiteId},
+        #{user.iotTypeId},
+        #{user.operatorId},
+        #{user.residentId},
+        #{user.createTime},
+        #{user.updateTime},
+        #{user.status},
+        #{user.systemId},
+        #{user.tenantId},
+        #{user.extend1}
+        )
+    </insert>
+
+    <delete id="delete" parameterType="java.util.Map" >
+        DELETE FROM user
+        WHERE `id` = #{id}
+    </delete>
+
+    <update id="update" parameterType="java.util.Map" >
+        UPDATE user
+        <set>
+            <if test="user.phone != null and user.phone != '' " >
+                phone = #{user.phone},
+            </if>
+            <if test="user.loginName != null and user.loginName != '' " >
+                login_name = #{user.loginName},
+            </if>
+            <if test="user.name != null and user.name != '' " >
+                name = #{user.name},
+            </if>
+            <if test="user.password != null and user.password != '' " >
+                password = #{user.password},
+            </if>
+            <if test="user.contcatPhone != null and user.contcatPhone != '' " >
+                contcat_phone = #{user.contcatPhone},
+            </if>
+            <if test="user.idType != null and user.idType != '' " >
+                id_type = #{user.idType},
+            </if>
+            <if test="user.idNumber != null and user.idNumber != '' " >
+                id_number = #{user.idNumber},
+            </if>
+            <if test="user.idNumberPhotoBackUrl != null and user.idNumberPhotoBackUrl != '' " >
+                id_number_photo_back_url = #{user.idNumberPhotoBackUrl},
+            </if>
+            <if test="user.idNumberPhotoUrl != null and user.idNumberPhotoUrl != '' " >
+                id_number_photo_url = #{user.idNumberPhotoUrl},
+            </if>
+            <if test="user.nickname != null and user.nickname != '' " >
+                nickname = #{user.nickname},
+            </if>
+            <if test="user.birthplace != null and user.birthplace != '' " >
+                birthplace = #{user.birthplace},
+            </if>
+            <if test="user.home != null and user.home != '' " >
+                home = #{user.home},
+            </if>
+            <if test="user.company != null and user.company != '' " >
+                company = #{user.company},
+            </if>
+            <if test="user.email != null and user.email != '' " >
+                email = #{user.email},
+            </if>
+            <if test="user.lastLoginTime != null and user.lastLoginTime != '' " >
+                last_login_time = #{user.lastLoginTime},
+            </if>
+            <if test="user.deviceStorehouseId != null and user.deviceStorehouseId != '' " >
+                device_storehouse_id = #{user.deviceStorehouseId},
+            </if>
+            <if test="user.installSiteId != null and user.installSiteId != '' " >
+                install_site_id = #{user.installSiteId},
+            </if>
+            <if test="user.iotTypeId != null and user.iotTypeId != '' " >
+                iot_type_id = #{user.iotTypeId},
+            </if>
+            <if test="user.operatorId != null and user.operatorId != '' " >
+                operator_id = #{user.operatorId},
+            </if>
+            <if test="user.residentId != null and user.residentId != '' " >
+                resident_id = #{user.residentId},
+            </if>
+            <if test="user.createTime != null and user.createTime != '' " >
+                create_time = #{user.createTime},
+            </if>
+            <if test="user.updateTime != null and user.updateTime != '' " >
+                update_time = #{user.updateTime},
+            </if>
+            <if test="user.status != null and user.status != '' " >
+                status = #{user.status},
+            </if>
+            <if test="user.systemId != null and user.systemId != '' " >
+                system_id = #{user.systemId},
+            </if>
+            <if test="user.tenantId != null and user.tenantId != '' " >
+                tenant_id = #{user.tenantId},
+            </if>
+            <if test="user.extend1 != null and user.extend1 != '' " >
+                extend1 = #{user.extend1},
+            </if>
+        </set>
+        WHERE `id` = #{user.id}
+    </update>
+
+
+    <select id="getAll" resultMap="User">
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM user
+        <where>
+            <if test="user.id != null and user.id != '' " >
+                id = #{user.id} AND
+            </if>
+            <if test="user.phone != null and user.phone != '' " >
+                phone = #{user.phone} AND
+            </if>
+            <if test="user.loginName != null and user.loginName != '' " >
+                login_name = #{user.loginName} AND
+            </if>
+            <if test="user.name != null and user.name != '' " >
+                name = #{user.name} AND
+            </if>
+            <if test="user.password != null and user.password != '' " >
+                password = #{user.password} AND
+            </if>
+            <if test="user.contcatPhone != null and user.contcatPhone != '' " >
+                contcat_phone = #{user.contcatPhone} AND
+            </if>
+            <if test="user.idType != null and user.idType != '' " >
+                id_type = #{user.idType} AND
+            </if>
+            <if test="user.idNumber != null and user.idNumber != '' " >
+                id_number = #{user.idNumber} AND
+            </if>
+            <if test="user.idNumberPhotoBackUrl != null and user.idNumberPhotoBackUrl != '' " >
+                id_number_photo_back_url = #{user.idNumberPhotoBackUrl} AND
+            </if>
+            <if test="user.idNumberPhotoUrl != null and user.idNumberPhotoUrl != '' " >
+                id_number_photo_url = #{user.idNumberPhotoUrl} AND
+            </if>
+            <if test="user.nickname != null and user.nickname != '' " >
+                nickname = #{user.nickname} AND
+            </if>
+            <if test="user.birthplace != null and user.birthplace != '' " >
+                birthplace = #{user.birthplace} AND
+            </if>
+            <if test="user.home != null and user.home != '' " >
+                home = #{user.home} AND
+            </if>
+            <if test="user.company != null and user.company != '' " >
+                company = #{user.company} AND
+            </if>
+            <if test="user.email != null and user.email != '' " >
+                email = #{user.email} AND
+            </if>
+            <if test="user.lastLoginTime != null and user.lastLoginTime != '' " >
+                last_login_time = #{user.lastLoginTime} AND
+            </if>
+            <if test="user.deviceStorehouseId != null and user.deviceStorehouseId != '' " >
+                device_storehouse_id = #{user.deviceStorehouseId} AND
+            </if>
+            <if test="user.installSiteId != null and user.installSiteId != '' " >
+                install_site_id = #{user.installSiteId} AND
+            </if>
+            <if test="user.iotTypeId != null and user.iotTypeId != '' " >
+                iot_type_id = #{user.iotTypeId} AND
+            </if>
+            <if test="user.operatorId != null and user.operatorId != '' " >
+                operator_id = #{user.operatorId} AND
+            </if>
+            <if test="user.residentId != null and user.residentId != '' " >
+                resident_id = #{user.residentId} AND
+            </if>
+            <if test="user.createTime != null and user.createTime != '' " >
+                create_time = #{user.createTime} AND
+            </if>
+            <if test="user.updateTime != null and user.updateTime != '' " >
+                update_time = #{user.updateTime} AND
+            </if>
+            <if test="user.status != null and user.status != '' " >
+                status = #{user.status} AND
+            </if>
+            <if test="user.systemId != null and user.systemId != '' " >
+                system_id = #{user.systemId} AND
+            </if>
+            <if test="user.tenantId != null and user.tenantId != '' " >
+                tenant_id = #{user.tenantId} AND
+            </if>
+            <if test="user.extend1 != null and user.extend1 != '' " >
+                extend1 = #{user.extend1} AND
+            </if>
+            1=1
+        </where>
+        ORDER BY id DESC
+    </select>
+
+    <select id="load" parameterType="java.util.Map" resultMap="User">
+        SELECT <include refid="Base_Column_List" />
+        FROM user
+        WHERE `id` = #{id}
+    </select>
+
+    <select id="pageList" parameterType="java.util.Map" resultMap="User">
+        SELECT <include refid="Base_Column_List" />
+        FROM user
+        <where>
+            <if test="user.id != null and user.id != '' " >
+                id = #{user.id} AND
+            </if>
+            <if test="user.phone != null and user.phone != '' " >
+                phone = #{user.phone} AND
+            </if>
+            <if test="user.loginName != null and user.loginName != '' " >
+                login_name = #{user.loginName} AND
+            </if>
+            <if test="user.name != null and user.name != '' " >
+                name = #{user.name} AND
+            </if>
+            <if test="user.password != null and user.password != '' " >
+                password = #{user.password} AND
+            </if>
+            <if test="user.contcatPhone != null and user.contcatPhone != '' " >
+                contcat_phone = #{user.contcatPhone} AND
+            </if>
+            <if test="user.idType != null and user.idType != '' " >
+                id_type = #{user.idType} AND
+            </if>
+            <if test="user.idNumber != null and user.idNumber != '' " >
+                id_number = #{user.idNumber} AND
+            </if>
+            <if test="user.idNumberPhotoBackUrl != null and user.idNumberPhotoBackUrl != '' " >
+                id_number_photo_back_url = #{user.idNumberPhotoBackUrl} AND
+            </if>
+            <if test="user.idNumberPhotoUrl != null and user.idNumberPhotoUrl != '' " >
+                id_number_photo_url = #{user.idNumberPhotoUrl} AND
+            </if>
+            <if test="user.nickname != null and user.nickname != '' " >
+                nickname = #{user.nickname} AND
+            </if>
+            <if test="user.birthplace != null and user.birthplace != '' " >
+                birthplace = #{user.birthplace} AND
+            </if>
+            <if test="user.home != null and user.home != '' " >
+                home = #{user.home} AND
+            </if>
+            <if test="user.company != null and user.company != '' " >
+                company = #{user.company} AND
+            </if>
+            <if test="user.email != null and user.email != '' " >
+                email = #{user.email} AND
+            </if>
+            <if test="user.lastLoginTime != null and user.lastLoginTime != '' " >
+                last_login_time = #{user.lastLoginTime} AND
+            </if>
+            <if test="user.deviceStorehouseId != null and user.deviceStorehouseId != '' " >
+                device_storehouse_id = #{user.deviceStorehouseId} AND
+            </if>
+            <if test="user.installSiteId != null and user.installSiteId != '' " >
+                install_site_id = #{user.installSiteId} AND
+            </if>
+            <if test="user.iotTypeId != null and user.iotTypeId != '' " >
+                iot_type_id = #{user.iotTypeId} AND
+            </if>
+            <if test="user.operatorId != null and user.operatorId != '' " >
+                operator_id = #{user.operatorId} AND
+            </if>
+            <if test="user.residentId != null and user.residentId != '' " >
+                resident_id = #{user.residentId} AND
+            </if>
+            <if test="user.createTime != null and user.createTime != '' " >
+                create_time = #{user.createTime} AND
+            </if>
+            <if test="user.updateTime != null and user.updateTime != '' " >
+                update_time = #{user.updateTime} AND
+            </if>
+            <if test="user.status != null and user.status != '' " >
+                status = #{user.status} AND
+            </if>
+            <if test="user.systemId != null and user.systemId != '' " >
+                system_id = #{user.systemId} AND
+            </if>
+            <if test="user.tenantId != null and user.tenantId != '' " >
+                tenant_id = #{user.tenantId} AND
+            </if>
+            <if test="user.extend1 != null and user.extend1 != '' " >
+                extend1 = #{user.extend1} AND
+            </if>
+            1=1
+        </where>
+        ORDER BY id DESC
+        LIMIT #{offset}, #{pagesize}
+    </select>
+
+    <select id="pageListCount" parameterType="java.util.Map" resultType="int">
+        SELECT count(1)
+        FROM user
+        <where>
+            <if test="user.id != null and user.id != '' " >
+                id = #{user.id} AND
+            </if>
+            <if test="user.phone != null and user.phone != '' " >
+                phone = #{user.phone} AND
+            </if>
+            <if test="user.loginName != null and user.loginName != '' " >
+                login_name = #{user.loginName} AND
+            </if>
+            <if test="user.name != null and user.name != '' " >
+                name = #{user.name} AND
+            </if>
+            <if test="user.password != null and user.password != '' " >
+                password = #{user.password} AND
+            </if>
+            <if test="user.contcatPhone != null and user.contcatPhone != '' " >
+                contcat_phone = #{user.contcatPhone} AND
+            </if>
+            <if test="user.idType != null and user.idType != '' " >
+                id_type = #{user.idType} AND
+            </if>
+            <if test="user.idNumber != null and user.idNumber != '' " >
+                id_number = #{user.idNumber} AND
+            </if>
+            <if test="user.idNumberPhotoBackUrl != null and user.idNumberPhotoBackUrl != '' " >
+                id_number_photo_back_url = #{user.idNumberPhotoBackUrl} AND
+            </if>
+            <if test="user.idNumberPhotoUrl != null and user.idNumberPhotoUrl != '' " >
+                id_number_photo_url = #{user.idNumberPhotoUrl} AND
+            </if>
+            <if test="user.nickname != null and user.nickname != '' " >
+                nickname = #{user.nickname} AND
+            </if>
+            <if test="user.birthplace != null and user.birthplace != '' " >
+                birthplace = #{user.birthplace} AND
+            </if>
+            <if test="user.home != null and user.home != '' " >
+                home = #{user.home} AND
+            </if>
+            <if test="user.company != null and user.company != '' " >
+                company = #{user.company} AND
+            </if>
+            <if test="user.email != null and user.email != '' " >
+                email = #{user.email} AND
+            </if>
+            <if test="user.lastLoginTime != null and user.lastLoginTime != '' " >
+                last_login_time = #{user.lastLoginTime} AND
+            </if>
+            <if test="user.deviceStorehouseId != null and user.deviceStorehouseId != '' " >
+                device_storehouse_id = #{user.deviceStorehouseId} AND
+            </if>
+            <if test="user.installSiteId != null and user.installSiteId != '' " >
+                install_site_id = #{user.installSiteId} AND
+            </if>
+            <if test="user.iotTypeId != null and user.iotTypeId != '' " >
+                iot_type_id = #{user.iotTypeId} AND
+            </if>
+            <if test="user.operatorId != null and user.operatorId != '' " >
+                operator_id = #{user.operatorId} AND
+            </if>
+            <if test="user.residentId != null and user.residentId != '' " >
+                resident_id = #{user.residentId} AND
+            </if>
+            <if test="user.createTime != null and user.createTime != '' " >
+                create_time = #{user.createTime} AND
+            </if>
+            <if test="user.updateTime != null and user.updateTime != '' " >
+                update_time = #{user.updateTime} AND
+            </if>
+            <if test="user.status != null and user.status != '' " >
+                status = #{user.status} AND
+            </if>
+            <if test="user.systemId != null and user.systemId != '' " >
+                system_id = #{user.systemId} AND
+            </if>
+            <if test="user.tenantId != null and user.tenantId != '' " >
+                tenant_id = #{user.tenantId} AND
+            </if>
+            <if test="user.extend1 != null and user.extend1 != '' " >
+                extend1 = #{user.extend1} AND
+            </if>
+            1=1
+        </where>
+    </select>
+
+</mapper>

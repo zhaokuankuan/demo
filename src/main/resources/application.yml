@@ -1,0 +1,23 @@
+server:
+  port: 8881
+  servlet:
+    context-path: /test
+logging:
+  level:
+    org.springframework.web: DEBUG
+    com.example.demo.*: DEBUG
+
+spring:
+  datasource:
+    master:
+      driverClassName: com.mysql.jdbc.Driver
+      jdbc-url: jdbc:mysql://zhaokk-linux:3306/test?useUnicode=true&amp;characterEncoding=utf-8
+      username: root
+      password: zhaokk
+    slave:
+      driverClassName: com.mysql.jdbc.Driver
+      jdbc-url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&amp;characterEncoding=utf-8
+      username: root
+      password: root
+
+
